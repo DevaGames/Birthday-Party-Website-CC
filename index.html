@@ -1,1 +1,76 @@
-  
+<!DOCTYPE HTML>  
+
+<head>
+    <title>BDAY SITE</title>
+    <style>
+        body {
+            background-color: #000;
+        }
+        video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+        audio {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -2;
+        }
+        @media (max-width: 768px){
+            video {
+                width: 50%;
+                height: 50%;
+            }
+            audio {
+                width: 50%;
+                height: 50%;
+            }
+        }
+        @media (max-width: 480px){
+            video {
+                width: 25%;
+                height: 25%;
+            }
+            audio {
+                width: 25%;
+                height: 25%;
+            }
+        }
+        img{
+            margin-left: 45vw;
+            margin-top: 70vh;
+        }
+    </style>
+    </head>
+    <body>
+        <video autoplay loop>
+            <source src="assets/146579-789534199_small.mp4" type="video/mp4">
+        </video>
+        <audio autoplay loop >
+            <source src="assets/happy-birthday-155461.mp3" type="audio/mp3">
+        </audio>
+        <img src="assets/play.png" onclick="toggle()">
+        <script defer>
+            const vid= document.querySelector('video');
+            const aud = document.querySelector('audio');
+            const btn = document.querySelector('img');
+            function toggle(){
+                if (vid.paused){
+                    vid.play();
+                    aud.play();
+                    return;
+                }
+                aud.pause();
+                vid.pause();
+            }
+        </script>
+    </body>
+</head>
